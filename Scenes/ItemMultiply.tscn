@@ -6,10 +6,7 @@
 [node name="ItemMultiply" instance=ExtResource("1")]
 script = ExtResource("2")
 
-[node name="ColorRect" parent="."]
-color = Color(1, 1, 0, 1)  # Yellow color for *3 item
-
 [node name="Label" parent="."]
 text = "*3"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(1, 1, 0, 1)  # Yellow color for *3 item
+theme_override_font_sizes/font_size = 30

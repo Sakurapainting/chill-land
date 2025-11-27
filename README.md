@@ -26,12 +26,12 @@ d:/chill-land/
 │   ├── Main.gd        # Main game logic
 │   └── Player.gd      # Player control
 └── Scenes/            # Game scenes
-    ├── Bullet.tscn    # Bullet scene
-    ├── Enemy.tscn     # Enemy scene
-    ├── Item.tscn      # Base item scene
-    ├── ItemAdd.tscn   # +2 bullet item scene
-    ├── ItemMultiply.tscn # *3 bullet item scene
-    └── Player.tscn    # Player scene
+	├── Bullet.tscn    # Bullet scene
+	├── Enemy.tscn     # Enemy scene
+	├── Item.tscn      # Base item scene
+	├── ItemAdd.tscn   # +2 bullet item scene
+	├── ItemMultiply.tscn # *3 bullet item scene
+	└── Player.tscn    # Player scene
 ```
 
 ## How to Play
