@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d8x3yq5x1yq"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Item.tscn" id="1"]
+[ext_resource type="Script" path="res://Scripts/ItemAdd.gd" id="2"]
+
+[node name="ItemAdd" instance=ExtResource("1")]
+script = ExtResource("2")
+
+[node name="ColorRect" parent="."]
+color = Color(0, 1, 0, 1)  # Green color for +2 item
+
+[node name="Label" parent="."]
+text = "+2"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24

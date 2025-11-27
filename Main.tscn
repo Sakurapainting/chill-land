@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://blbh74d3ownyx"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="2"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scaling = false
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1, 1)
+motion_offset = Vector2(0, 0)
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+texture_filter = 1
+modulate = Color(0.2, 0.2, 0.3, 1)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1, 0.5)
+motion_offset = Vector2(0, 0)
+
+[node name="BackgroundLayer2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_filter = 1
+modulate = Color(0.3, 0.3, 0.4, 0.8)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1, 0.2)
+motion_offset = Vector2(0, 0)
+
+[node name="BackgroundLayer3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture_filter = 1
+modulate = Color(0.4, 0.4, 0.5, 0.6)
+
+[node name="Player" parent="." instance=ExtResource("2")]
+position = Vector2(400, 500)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+anchor_right = 1.0
+offset_top = 20
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+
+[node name="BulletCountLabel" type="Label" parent="CanvasLayer"]
+offset_top = 60
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Bullets: 1"
+
+[node name="ControlsLabel" type="Label" parent="CanvasLayer"]
+anchor_bottom = 1.0
+offset_bottom = 40
+theme_override_colors/font_color = Color(1, 1, 1, 0.7)
+theme_override_font_sizes/font_size = 16
+text = "方向键移动 | 空格键射击"
+horizontal_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 100.0
+offset_right = 100.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "CHILL LAND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+
+[node name="ItemTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+one_shot = false
+
+[node name="BackgroundTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = false  # Disable auto-start since we don't have a handler
+one_shot = false
+
+[connection signal="timeout" from="ItemTimer" to="." method="_on_ItemTimer_timeout"]
